@@ -1,0 +1,162 @@
+Creating a multiplayer game in Go, from zero
+16:30 03 Feb 2024
+Tags: ebiten, golang, game
+
+
+Francesc Gil
+https://maze-wars.com
+@xescugc
+@MazeWars
+xescugil@gmail.com
+
+* Before we start!
+
+It's still under development so bugs can happen and also the sever may not hold, but it's fine, break it :)
+
+Check it on [[https://maze-wars.com]]
+
+* A bit of myself
+
+* Why did I do it
+
+Inspied in a Warcraft 3 mod named "Line Tower Wars"
+
+.image wc3.jpg 500 350
+
+* Beginnings
+
+- Lua and [[https://love2d.org/][LÖVE]]
+- GO and [[https://ebitengine.org/][Ebiten]]
+
+* Examples
+
+.code ebiten_go
+
+* First steps
+
+A few games to learn [[https://github.com/xescugc/games]]:
+
+- [[https://github.com/xescugc/games/tree/master/shoot_the_enemy][Shoot the enemy]]
+- [[https://github.com/xescugc/games/tree/master/snake][Snake]]
+- [[https://github.com/xescugc/games/tree/master/space][Space Invaders]]
+- [[https://github.com/xescugc/games/tree/master/tiles][Tiles]]
+
+* Shoot the enemy
+
+.image shoot_the_enemy.png 500 700
+
+* Snake
+
+.image snake.png 500 700
+
+* Space Invaders
+
+.image space.png 500 700
+
+* Tiles
+
+.video tiles.mp4 video/mp4 500 700
+
+* The real thing, Maze Wars
+
+.image game_sample.png 500 700
+
+* Items
+
+- Assets
+- Map
+- Code Architecture
+- Summon Units
+- Place towers
+- Gold, Income and Lives
+- Multiplayer Server
+- UX/UI
+
+* Assets
+
+[[https://pixel-boy.itch.io/ninja-adventure-asset-pack][Ninja Adventure Asset Pack]]
+
+.image na_asset.png 500 700
+
+* Map
+
+Tiled: Is a 2D level editor that helps you develop the content of your game
+
+.image tiled.png 500 700
+
+* Code Architecture
+
+Wanted to use [[https://facebookarchive.github.io/flux/][Flux]] so I created [[https://github.com/xescugc/go-flux]]
+
+- State Update
+- Potential for replaying games
+
+.image flux.png 300 900
+
+* Summon Units
+
+Pathing evolution:
+
+- Y++
+- Dijkstra
+- A*
+- A* plus
+
+.video units.mp4 video/mp4 300 500
+
+* Pathing with Dijkstra
+
+.video dijkstra.mp4 video/mp4 400 600
+
+* Pathing with A*
+
+.video astar.mp4 video/mp4 400 600
+
+* Place Towers
+
+- Do not block the path
+- Attack units
+
+.video towers.mp4 video/mp4 400 600
+
+* Gold, Income and Lives
+
+* Multiplayer Server
+
+- [[https://www.gabrielgambetta.com/client-server-game-architecture.html][Fast-Paced Multiplayer (Part I): Client-Server Game Architecture]] for documentation reference
+- Using Authoritative Server with client prediction
+- Websockets for Client<->Server communication
+- Server also using Flux
+
+* UX/UI
+
+Migration to [[https://ebitenui.github.io/][Ebitenui]]
+
+- User sign up
+- Lobby
+- Waiting Room
+- Game
+
+.image eary_ui.png 300 400
+
+* Cross compilation
+
+- Linux
+- Darwin
+- Windows
+
+Browser with WASM and Android on the future
+
+* Future of Maze Wars
+
+There are still a lot of things to do and improvements:
+
+- Improves A*
+- Add more units
+- Add more towers
+- And much much much much much ... much more
+
+* Q&A
+
+.link https://maze-wars.com
+.link https://github.com/xescugc/maze-wars
